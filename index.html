@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>PC Stats</title>
-    <script src="renderer.js"></script>
+    <script src='main.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 </head>
 <style>
@@ -24,7 +24,41 @@
             <p>Information about your graphics card</p>
           </div>
           <div class="card-action">
-            <a href="#" onclick="myFunction()">Upgrade</a>
+            <a href="#">Upgrade</a>
+            <a href="#">Overclocking</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card indigo darken-4">
+          <div class="card-content white-text">
+            <span class="card-title">CPU</span>
+            <p>
+              <script>document.write(getCPU())</script>
+            </p>
+          </div>
+          <div class="card-action">
+            <a href="#" onclick="getCPU()">Upgrade</a>
+            <a href="#">Overclocking</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card indigo darken-4">
+          <div class="card-content white-text">
+            <span class="card-title">RAM</span>
+            <p>
+              <script>document.write(getRAM())</script>
+            </p>
+          </div>
+          <div class="card-action">
+            <a href="#" onclick="getRAM()">Upgrade</a>
             <a href="#">Overclocking</a>
           </div>
         </div>
@@ -32,8 +66,6 @@
     </div>
 
 <p id="demo"></p>
-
-<script src='main.js'></script>
 
 </body>
 </html>

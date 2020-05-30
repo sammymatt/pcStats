@@ -20,14 +20,33 @@ function createWindow () {
   mainWindow.webContents.openDevTools()
 }
 
-function myFunction () {
-  // test of OS
+function getCPU () {
+
   var os = require('os')
-  console.log(os.type()); // "Windows_NT"
+  //console.log(os.type()); // "Windows_NT"
   //console.log(os.release()); // "10.0.14393"
   //console.log(os.platform()); // "win32"
-  console.log(os.cpus()[0].model);
+  return os.cpus()[0].model;
 }
+
+function getRAM () {
+  //console.log(formatBytes(os.totalmem()));
+  var os = require('os')
+  return formatBytes(os.totalmem());
+}
+
+// going to be used as a switch statement which returns whatever choice e.g. RAM
+function getPCInfo() {
+}
+
+function formatBytes(a,b=2)
+{
+  if(0===a)
+    return"0 Bytes";
+  const c=0>b?0:b,d=Math.floor(Math.log(a)/Math.log(1024));
+    return parseFloat((a/Math.pow(1024,d)).toFixed(c))+" "+["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"][d]
+}
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
