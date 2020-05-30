@@ -15,6 +15,12 @@ function createWindow () {
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
+  // test of OS
+  const os = require('os');
+  console.log(os.type()); // "Windows_NT"
+  console.log(os.release()); // "10.0.14393"
+  console.log(os.platform()); // "win32"
+  
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
