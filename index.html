@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>PC Stats</title>
+    <script src="renderer.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 </head>
 <style>
@@ -20,25 +21,19 @@
         <div class="card indigo darken-4">
           <div class="card-content white-text">
             <span class="card-title">Graphics Card</span>
-            <p>Information about your graphics card.</p>
+            <p>Information about your graphics card</p>
           </div>
           <div class="card-action">
-            <a href="#">Upgrade</a>
+            <a href="#" onclick="myFunction()">Upgrade</a>
             <a href="#">Overclocking</a>
           </div>
         </div>
       </div>
     </div>
-    
-  
 
+<p id="demo"></p>
 
-<script>
- const electron = require('electron')
-
-
-</script>
-
+<script src='main.js'></script>
 
 </body>
 </html>

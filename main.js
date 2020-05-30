@@ -8,21 +8,25 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true
     }
   })
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
-  // test of OS
-  const os = require('os');
-  console.log(os.type()); // "Windows_NT"
-  console.log(os.release()); // "10.0.14393"
-  console.log(os.platform()); // "win32"
-  
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
+}
+
+function myFunction () {
+  // test of OS
+  var os = require('os')
+  console.log(os.type()); // "Windows_NT"
+  //console.log(os.release()); // "10.0.14393"
+  //console.log(os.platform()); // "win32"
+  console.log(os.cpus()[0].model);
 }
 
 // This method will be called when Electron has finished
