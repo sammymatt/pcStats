@@ -14,7 +14,7 @@
   "author": "Me",
   "license": "",
   "devDependencies": {
-    "electron": "^9.0.0"
+    "electron": "^11.5.0"
   },
   "dependencies": {
     "materialize-css": "^1.0.0-rc.2"
